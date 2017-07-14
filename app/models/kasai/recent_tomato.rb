@@ -1,0 +1,2 @@
+class RecentTomato < ApplicationRecord
+end

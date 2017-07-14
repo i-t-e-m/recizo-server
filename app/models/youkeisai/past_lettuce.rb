@@ -1,0 +1,3 @@
+
+class PastLettuce < ApplicationRecord
+end

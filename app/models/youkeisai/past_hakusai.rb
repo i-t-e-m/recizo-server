@@ -1,0 +1,3 @@
+
+class PastHakusai < ApplicationRecord
+end

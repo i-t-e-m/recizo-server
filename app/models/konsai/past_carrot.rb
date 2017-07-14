@@ -1,0 +1,2 @@
+class PastCarrot < ApplicationRecord
+end

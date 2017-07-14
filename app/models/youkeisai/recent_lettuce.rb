@@ -1,0 +1,3 @@
+
+class RecentLettuce < ApplicationRecord
+end

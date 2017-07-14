@@ -1,0 +1,2 @@
+class RecentCucumber < ApplicationRecord
+end

@@ -1,0 +1,3 @@
+
+class RecentNegi < ApplicationRecord
+end

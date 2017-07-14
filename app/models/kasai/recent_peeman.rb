@@ -1,0 +1,2 @@
+class RecentPeeman < ApplicationRecord
+end

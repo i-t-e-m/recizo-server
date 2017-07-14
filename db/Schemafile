@@ -1,0 +1,257 @@
+#野菜の数 * 2
+
+#キャベツ
+create_table 'recent_cabbages', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_cabbages', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#ネギ
+create_table 'recent_negis', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_negis', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#白菜
+create_table 'recent_hakusais', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_hakusais', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#ほうれん草
+create_table 'recent_spinaches', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_spinaches', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#レタス
+create_table 'recent_lettuces', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_lettuces', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#玉ねぎ
+create_table 'recent_onions', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_onions', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+
+#ブロッコリー
+create_table 'recent_broccolis', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_broccolis', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#きゅうり
+create_table 'recent_cucumbers', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_cucumbers', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#トマト
+create_table 'recent_tomatoes', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_tomatoes', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#なす
+create_table 'recent_eggplants', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_eggplants', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#ピーマン
+create_table 'recent_peemen', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_peemen', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#大根
+create_table 'recent_daikons', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_daikons', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#人参
+create_table 'recent_carrots', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_carrots', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#里芋
+create_table 'recent_taros', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_taros', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+#じゃがいも
+create_table 'recent_potatos', force: :cascade do |t|
+  t.string    'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end
+
+create_table 'past_potatos', force: :cascade do |t|
+  t.string      'date', null: false
+  t.integer   'price', null: false
+  t.datetime  'created_at'
+  t.datetime  'updated_at'
+  t.index ['date'], unique: true
+end

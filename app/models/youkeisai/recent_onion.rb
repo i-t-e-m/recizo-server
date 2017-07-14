@@ -1,0 +1,3 @@
+
+class RecentOnion < ApplicationRecord
+end

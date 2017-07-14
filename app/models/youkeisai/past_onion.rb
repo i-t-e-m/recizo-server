@@ -1,0 +1,3 @@
+
+class PastOnion < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class RecentCabbage < ApplicationRecord
+end

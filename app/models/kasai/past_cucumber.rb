@@ -1,0 +1,2 @@
+class PastCucumber < ApplicationRecord
+end

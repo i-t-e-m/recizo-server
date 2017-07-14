@@ -1,0 +1,3 @@
+
+class RecentSpinach < ApplicationRecord
+end

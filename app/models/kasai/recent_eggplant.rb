@@ -1,0 +1,2 @@
+class RecentEggplant < ApplicationRecord
+end

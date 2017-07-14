@@ -1,0 +1,3 @@
+
+class PastBroccoli < ApplicationRecord
+end

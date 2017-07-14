@@ -1,0 +1,3 @@
+
+class RecentBroccoli < ApplicationRecord
+end

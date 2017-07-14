@@ -1,0 +1,3 @@
+
+class PastNegi < ApplicationRecord
+end

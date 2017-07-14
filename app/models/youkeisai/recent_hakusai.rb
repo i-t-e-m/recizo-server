@@ -1,0 +1,2 @@
+class RecentHakusai < ApplicationRecord
+end

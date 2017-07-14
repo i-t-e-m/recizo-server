@@ -1,0 +1,2 @@
+class PastDaikon < ApplicationRecord
+end

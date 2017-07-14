@@ -1,0 +1,2 @@
+class PastCabbage < ApplicationRecord
+end

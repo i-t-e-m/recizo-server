@@ -1,0 +1,2 @@
+class PastTomato < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class RecentPotato < ApplicationRecord
+end

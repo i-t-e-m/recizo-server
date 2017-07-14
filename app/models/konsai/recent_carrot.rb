@@ -1,0 +1,2 @@
+class RecentCarrot < ApplicationRecord
+end

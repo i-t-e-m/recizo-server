@@ -1,0 +1,2 @@
+class PastTaro < ApplicationRecord
+end

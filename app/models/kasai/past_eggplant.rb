@@ -1,0 +1,2 @@
+class PastEggplant < ApplicationRecord
+end

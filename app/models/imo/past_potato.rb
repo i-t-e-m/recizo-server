@@ -1,0 +1,2 @@
+class PastPotato < ApplicationRecord
+end
