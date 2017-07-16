@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope :api do
     namespace :recent do
-      get 'vegetable', to: 'apis#index'
+      get '', to: 'apis#index'
 
       get 'kyabetsu', to: 'apis#kyabetsu'
       get 'negi', to: 'apis#negi'
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
 
     namespace :past do
-      get 'vegetable', to: 'apis#index'
+      get '', to: 'apis#index'
 
       get 'kyabetsu', to: 'apis#kyabetsu'
       get 'negi', to: 'apis#negi'

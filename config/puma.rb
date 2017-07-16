@@ -1,3 +1,16 @@
+#ここから
+#_homeは各自環境で設定してください。
+proj_path = "#{File.expand_path("../..", __FILE__)}"
+proj_name = File.basename(proj_path)
+home = ENV.fetch("HOME") { "/home/recizo" }
+#home = "#{ENV.fetch("HOME")}/recizo"
+
+pidfile "#{home}/run/#{proj_name}.pid"
+bind "unix://#{home}/run/#{proj_name}.sock"
+directory proj_path
+#ここまで追記
+
+
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
