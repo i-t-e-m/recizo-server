@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: recizo-server_production
-  username: recizo-server
+  username: recizo
   password: <%= ENV['RECIZO_DATABASE_PASSWORD'] %>

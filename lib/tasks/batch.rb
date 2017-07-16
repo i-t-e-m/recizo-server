@@ -59,9 +59,9 @@ class Tasks::Batch
       msg = ''
       e.backtrace.each do |m|
         msg += "#{m}\n"
+        p m
       end
       p e.message
-      p msg
       Slack.chat_postMessage text: "エラー報告:（#{Date.today}）\n #{e.message}",
                              username: 'recizo-bot',
                              channel: '#recizo-message'

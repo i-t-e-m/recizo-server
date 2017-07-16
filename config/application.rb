@@ -15,11 +15,12 @@ module RecizoServer
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.autoload_paths += Dir["#{config.root}/lib"]
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.autoload_paths += Dir["#{config.root}/app/models/youkeisai"]
     config.autoload_paths += Dir["#{config.root}/app/models/kasai"]
     config.autoload_paths += Dir["#{config.root}/app/models/konsai"]
     config.autoload_paths += Dir["#{config.root}/app/models/imo"]
+    config.eager_load_paths += Dir["#{config.root}/lib/**/"]
 
   end
 end
