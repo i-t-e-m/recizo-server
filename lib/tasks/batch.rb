@@ -37,8 +37,8 @@ class Tasks::Batch
       # dbアップロード
       FileUtils.mkdir_p('lib/tasks/db_dump')
       file_name = "#{Date.today}_yasai.dump"
-      # system("pg_dump -h localhost -U oliver -c yasai_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
-      system("pg_dump -h localhost -U recizo -c yasai_production > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
+      # system("pg_dump -h localhost -U oliver -c recizo-server_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
+      system("pg_dump -h localhost -U recizo -c recizo-server_production > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
       ut = Tasks::UploadVegetable.new
       ut.upload_db_data(file_name)
 
