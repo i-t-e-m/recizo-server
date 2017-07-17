@@ -5,33 +5,33 @@ class Recent::ApisController < ApplicationController
 
     cabbage = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['cabbage'])
 
-    negi = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['negi'])
+    negi = create_vegetable_json(RecentNegi.all.order('id'), json_dates['negi'])
 
-    hakusai = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['hakusai'])
+    hakusai = create_vegetable_json(RecentHakusai.all.order('id'), json_dates['hakusai'])
 
-    spinach = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['spinach'])
+    spinach = create_vegetable_json(RecentSpinach.all.order('id'), json_dates['spinach'])
 
-    lettuce = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['lettuce'])
+    lettuce = create_vegetable_json(RecentLettuce.all.order('id'), json_dates['lettuce'])
 
-    onion = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['onion'])
+    onion = create_vegetable_json(RecentOnion.all.order('id'), json_dates['onion'])
 
-    broccoli = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['broccoli'])
+    broccoli = create_vegetable_json(RecentBroccoli.all.order('id'), json_dates['broccoli'])
 
-    cucumber = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['cucumber'])
+    cucumber = create_vegetable_json(RecentCucumber.all.order('id'), json_dates['cucumber'])
 
-    tomato = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['tomato'])
+    tomato = create_vegetable_json(RecentTomato.all.order('id'), json_dates['tomato'])
 
-    eggplant = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['eggplant'])
+    eggplant = create_vegetable_json(RecentEggplant.all.order('id'), json_dates['eggplant'])
 
-    peeman = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['peeman'])
+    peeman = create_vegetable_json(RecentPeeman.all.order('id'), json_dates['peeman'])
 
-    daikon = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['daikon'])
+    daikon = create_vegetable_json(RecentDaikon.all.order('id'), json_dates['daikon'])
 
-    carrot = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['carrot'])
+    carrot = create_vegetable_json(RecentCarrot.all.order('id'), json_dates['carrot'])
 
-    taro = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['taro'])
+    taro = create_vegetable_json(RecentTaro.all.order('id'), json_dates['taro'])
 
-    potato = create_vegetable_json(RecentCabbage.all.order('id'), json_dates['potato'])
+    potato = create_vegetable_json(RecentPotato.all.order('id'), json_dates['potato'])
 
     vegetables = {
       kyabetsu: cabbage,
