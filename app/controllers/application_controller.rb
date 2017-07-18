@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     d = Date.new(2016, date_array[0].to_i, date_array[1].to_i)
 
     veg.sort_by { |hash|
-      date_array2 = hash['date'].split('/')
+      date_array2 = hash[:date].split('/')
       d2 = Date.new(2016, date_array2[0].to_i, date_array2[1].to_i)
 
       if (d2 - d) <= 0
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     @jd
   end
 
-  def create_vegetable_json(veg, date)
-    sort_by_date(veg, date).to_json(only: [:date, :price])
+  def create_vegetable_map(veg, date)
+    sort_by_date(veg.map { |v| { date: v.date, price: v.price } }, date)
   end
 end
