@@ -1,7 +1,14 @@
 class Tasks::Batch
 
   def self.execute
-    # TODO Driveフォルダ分け
+    Tasks::Batch.batch(0)
+  end
+
+  def self.manual_execute
+    Tasks::Batch.batch(1)
+  end
+
+  def self.batch(type)
     begin
       #更新行数
       change = 0
@@ -10,8 +17,14 @@ class Tasks::Batch
 
       VEGETABLES.each do |vegs_name, up_vegname|
 
-        # ダウンロード
-        file_name = Tasks::DownloadVegetable.take_excel(vegs_name)
+
+        file_name = if type.zero?
+                      # ダウンロード
+                      Tasks::DownloadVegetable.take_excel(vegs_name)
+                    else
+                      # 手動配置
+                      Tasks::DownloadVegetable.self_excel(vegs_name)
+                    end
 
         #オープン
         if file_name.include?('.xlsx')
@@ -37,8 +50,12 @@ class Tasks::Batch
       # dbアップロード
       FileUtils.mkdir_p('lib/tasks/db_dump')
       file_name = "#{Date.today}_yasai.dump"
-      # system("pg_dump -h localhost -U oliver -c recizo-server_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
-      system("pg_dump -h localhost -U recizo -c recizo-server_production > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
+      if Rails.env.production?
+        system("pg_dump -h localhost -U recizo -c recizo-server_production > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
+      else
+        system("pg_dump -h localhost -U oliver -c recizo-server_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
+      end
+
       ut = Tasks::UploadVegetable.new
       ut.upload_db_data(file_name)
 
@@ -76,6 +93,5 @@ class Tasks::Batch
                              channel: '#recizo-message'
     end
   end
-
 
 end
