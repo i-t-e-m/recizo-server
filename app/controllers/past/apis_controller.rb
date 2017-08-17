@@ -1,6 +1,6 @@
 class Past::ApisController < ApplicationController
 
-  before_action :authenticate
+  #before_action :authenticate
 
   def index
 
@@ -130,7 +130,8 @@ class Past::ApisController < ApplicationController
 
   def jagaimo
     potato = create_vegetable_map(PastPotato.all.select('date, price'), pull_date_from_json['potato'])
-    render json: { jagaimo: potato }
+    @json_keys = pull_key_from_json
+    render json: @json_keys['RECIZO_API_TOKEN']
   end
 
   protected
