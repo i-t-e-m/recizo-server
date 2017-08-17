@@ -40,5 +40,11 @@ Rails.application.routes.draw do
       get 'satoimo', to: 'apis#satoimo'
       get 'jagaimo', to: 'apis#jagaimo'
     end
+
+
+    namespace :recipe do
+      get '', to: 'apis#index'
+    end
+
   end
 end
