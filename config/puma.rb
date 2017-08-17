@@ -8,6 +8,9 @@ home = ENV.fetch("HOME") { "/home/recizo" }
 pidfile "#{home}/run/#{proj_name}.pid"
 bind "unix://#{home}/run/#{proj_name}.sock"
 directory proj_path
+
+stdout_redirect File.expand_path("#{home}/log/puma_access.log"), File.expand_path("#{home}/log/puma_error.log"), true
+
 #ここまで追記
 
 
