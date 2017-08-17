@@ -255,3 +255,9 @@ create_table 'past_potatos', force: :cascade do |t|
   t.datetime  'updated_at'
   t.index ['date'], unique: true
 end
+
+
+create_table 'categories', force: :cascade do |t|
+  t.string      'category_id', null: false
+  t.string      'name', null: false
+end
