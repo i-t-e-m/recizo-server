@@ -138,19 +138,8 @@ class Recent::ApisController < ApplicationController
 
   def authenticate
     authenticate_or_request_with_http_token do |token|
-      @json_keys = pull_key_from_json
-      p @json_keys['RECIZO_API_TOKEN']
-      token == @json_keys['RECIZO_API_TOKEN']
+      token == ENV['RECIZO_API_TOKEN']
     end
-  end
-
-  private
-
-  def pull_key_from_json
-    File.open('lib/tasks/secrets/environment.json') do |file|
-      @jd = JSON.load(file)
-    end
-    @jd
   end
 
 end

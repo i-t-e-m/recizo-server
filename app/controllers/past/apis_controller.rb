@@ -1,6 +1,6 @@
 class Past::ApisController < ApplicationController
 
-  #before_action :authenticate
+  before_action :authenticate
 
   def index
 
@@ -130,27 +130,14 @@ class Past::ApisController < ApplicationController
 
   def jagaimo
     potato = create_vegetable_map(PastPotato.all.select('date, price'), pull_date_from_json['potato'])
-    @json_keys = pull_key_from_json
-    render json: @json_keys['RECIZO_API_TOKEN']
+    render json: { jagaimo: potato }
   end
 
   protected
 
   def authenticate
     authenticate_or_request_with_http_token do |token|
-      @json_keys = pull_key_from_json
-      puts @json_keys['RECIZO_API_TOKEN']
-      token == @json_keys['RECIZO_API_TOKEN']
+      token == ENV['RECIZO_API_TOKEN']
     end
   end
-
-  private
-
-  def pull_key_from_json
-    File.open('lib/tasks/secrets/environment.json') do |file|
-      @jd = JSON.load(file)
-    end
-    @jd
-  end
-
 end

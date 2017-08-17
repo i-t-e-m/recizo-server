@@ -66,3 +66,5 @@ gem 'google-api-client', '~> 0.11'
 gem 'googleauth'
 gem 'redis-rails'
 
+gem 'dotenv-rails'
+

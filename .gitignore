@@ -40,3 +40,5 @@ doc/
 
 /lib/tasks/past_excel
 /lib/tasks/secrets
+
+.env
