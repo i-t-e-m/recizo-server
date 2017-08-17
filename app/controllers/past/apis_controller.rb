@@ -142,5 +142,14 @@ class Past::ApisController < ApplicationController
       token == @json_keys['RECIZO_API_TOKEN']
     end
   end
-  
+
+  private
+
+  def pull_key_from_json
+    File.open('lib/tasks/secrets/environment.json') do |file|
+      @jd = JSON.load(file)
+    end
+    @jd
+  end
+
 end

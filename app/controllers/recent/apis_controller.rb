@@ -144,4 +144,13 @@ class Recent::ApisController < ApplicationController
     end
   end
 
+  private
+
+  def pull_key_from_json
+    File.open('lib/tasks/secrets/environment.json') do |file|
+      @jd = JSON.load(file)
+    end
+    @jd
+  end
+
 end
