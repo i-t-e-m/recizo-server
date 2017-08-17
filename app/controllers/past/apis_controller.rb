@@ -138,7 +138,7 @@ class Past::ApisController < ApplicationController
   def authenticate
     authenticate_or_request_with_http_token do |token|
       @json_keys = pull_key_from_json
-      p @json_keys['RECIZO_API_TOKEN']
+      puts @json_keys['RECIZO_API_TOKEN']
       token == @json_keys['RECIZO_API_TOKEN']
     end
   end
