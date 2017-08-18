@@ -2,7 +2,7 @@ class Recipe::ApisController < ApplicationController
 
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  #before_action :authenticate
+  before_action :authenticate
 
   def index
     categories = Category.where('name LIKE ?', "%#{params[:category]}%")
@@ -35,7 +35,7 @@ class Recipe::ApisController < ApplicationController
       TestSingleton.instance.store_nil(client_id_map[:num])
     end
 
-    render json: {result: recipes}
+    render json: { result: recipes }
   end
 
   protected
