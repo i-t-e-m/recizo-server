@@ -2,7 +2,7 @@ class Recipe::ApisController < ApplicationController
 
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  before_action :authenticate
+  #before_action :authenticate
 
   def index
     categories = Category.where('name LIKE ?', "%#{params[:category]}%")
@@ -12,7 +12,7 @@ class Recipe::ApisController < ApplicationController
 
     client_id = client_id_map[:id]
 
-    recipes_list = []
+    recipes = []
 
     if categories.exists? && client_id
       # categories.each do |category|
@@ -31,12 +31,11 @@ class Recipe::ApisController < ApplicationController
       recipes = hash['result'].map{|item|
         item.slice('recipeTitle', 'recipeUrl', 'foodImageUrl','nickname', 'recipeDescription')
       }
-      recipes_list.push(recipes)
       sleep(0.8)
       TestSingleton.instance.store_nil(client_id_map[:num])
     end
 
-    render json: recipes_list
+    render json: {result: recipes}
   end
 
   protected
