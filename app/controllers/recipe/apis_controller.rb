@@ -19,11 +19,8 @@ class Recipe::ApisController < ApplicationController
       recipes = hash['result'].map{|item|
         item.slice('recipeTitle', 'recipeUrl', 'foodImageUrl', 'nickname', 'recipeDescription')
       }
-      sleep(0.8)
-    end
-
-    unless client_id.blank?
       RecipeTokenSingleton.instance.store_nil(client_id_map[:num])
+      sleep(0.8)
     end
 
     p '使用したID:'
