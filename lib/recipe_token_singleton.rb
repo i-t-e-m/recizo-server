@@ -1,5 +1,5 @@
 
-class TestSingleton
+class RecipeTokenSingleton
   include Singleton
   def initialize
     @client_id1 = nil
