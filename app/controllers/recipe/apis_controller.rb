@@ -14,21 +14,27 @@ class Recipe::ApisController < ApplicationController
     recipes = []
     if categories.exists? && client_id
       recipe_url = "https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=#{categories[0].category_id}&applicationId=#{client_id}"
-      response = open(recipe_url) {|f| f.read}
-      hash = JSON.parse(response)
-      recipes = hash['result'].map{|item|
-        item.slice('recipeTitle', 'recipeUrl', 'foodImageUrl', 'nickname', 'recipeDescription')
-      }
+      begin
+        response = open(recipe_url) {|f| f.read}
+        hash = JSON.parse(response)
+        recipes = hash['result'].map{|item|
+          item.slice('recipeTitle', 'recipeUrl', 'foodImageUrl', 'nickname', 'recipeDescription')
+        }
+      rescue
+        unless client_id.blank?
+          RecipeTokenSingleton.instance.store_nil(client_id_map[:num])
+        end
+        render json: { result: false }
+        return
+      end
       sleep(1.1)
+    else
+      render json: { result: false }
+      return
     end
-
     unless client_id.blank?
       RecipeTokenSingleton.instance.store_nil(client_id_map[:num])
     end
-
-    p '使用したID:'
-    p client_id_map[:num]
-
     render json: { result: recipes }
   end
 
@@ -39,5 +45,6 @@ class Recipe::ApisController < ApplicationController
       token == ENV['RECIZO_API_TOKEN']
     end
   end
+
 
 end
