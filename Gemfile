@@ -68,3 +68,5 @@ gem 'redis-rails'
 
 gem 'dotenv-rails'
 
+gem 'babel-transpiler'
+
