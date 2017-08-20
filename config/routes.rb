@@ -50,4 +50,5 @@ Rails.application.routes.draw do
     end
 
   end
+  match '*any' => 'home#any', via: :all
 end
