@@ -129,7 +129,7 @@ p {
 .header {
     width: 100%;
     height: calc(100vh - 14rem);
-    background: url("LP_top.png") center;
+    background: url("image/LP_top.png") center;
     background-size: cover;
     position: relative;
 }
@@ -344,7 +344,7 @@ p {
     height: auto;
     top: -10%;
     right: -10%;
-    content: url("pi_r.svg");
+    content: url("image/pi_r.svg");
 }
 .main__func-description-area__wrap__img__main {
     width: 100%;
@@ -475,7 +475,7 @@ p {
     }
     .main__func-description-area__wrap:nth-child(2n) .main__func-description-area__wrap__img::before {
         left: -15%;
-        content: url("pi_l.svg");
+        content: url("image/pi_l.svg");
     }
     .main__dl-area {
         margin: 4rem 0;
