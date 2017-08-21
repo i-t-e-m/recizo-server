@@ -29,13 +29,13 @@ class Recipe::ApisController < ApplicationController
       rescue
         sleep(1.1)
         token_to_nil(client_id, client_id_map)
-        render json: { result: false }
+        render json: { result: [] }, status: 504
         return
       end
       sleep(1.1)
     else
       token_to_nil(client_id, client_id_map)
-      render json: { result: false }
+      render json: { result: [] }, status: 504
       return
     end
     token_to_nil(client_id, client_id_map)
