@@ -27,6 +27,7 @@ class Recipe::ApisController < ApplicationController
           item.slice('recipeTitle', 'recipeUrl', 'foodImageUrl', 'nickname', 'recipeDescription')
         }
       rescue
+        sleep(1.1)
         token_to_nil(client_id, client_id_map)
         render json: { result: false }
         return
