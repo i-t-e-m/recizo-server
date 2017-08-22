@@ -44,7 +44,7 @@ psql -U postgres -c 'alter role root login;'
 psql -U postgres -c 'alter role root createdb;'
 
 
-cd ~/recizo-server-master
+cd ~/recizo-server
 bundle config build.pg --with-pg-config=/usr/pgsql-9.6/bin/pg_config
 bundle install --path vendor/bundle
 
