@@ -52,7 +52,7 @@ bundle exec rake db:create
 bundle exec ridgepole -c config/database.yml -E development --apply -f db/Schemafile
 
 cp lib/tasks/secrets/environment.json.sample lib/tasks/secrets/environment.json
-cp lib/tasks/secrets/client_secrets.json lib/tasks/secrets/client_secrets.json
+cp lib/tasks/secrets/client_secrets.json.sample lib/tasks/secrets/client_secrets.json
 mkdir ~/run
 
 bundle exec rails s
