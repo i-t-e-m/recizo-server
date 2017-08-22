@@ -39,6 +39,7 @@ doc/
 .secret
 
 /lib/tasks/past_excel
-/lib/tasks/secrets
+/lib/tasks/secrets/client_secrets.json
+/lib/tasks/secrets/environment.json
 
 .env
