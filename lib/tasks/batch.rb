@@ -56,7 +56,7 @@ class Tasks::Batch
       if Rails.env.production?
         system("pg_dump -h localhost -U recizo -c recizo-server_production > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
       else
-        system("pg_dump -h localhost -U oliver -c recizo-server_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
+        #system("pg_dump -h localhost -U oliver -c recizo-server_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
       end
 
       if Rails.env.production?

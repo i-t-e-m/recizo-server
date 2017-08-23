@@ -59,7 +59,7 @@ class Tasks::StoreVegetable
     #p @veg_ja
     if !none_date
       (1..62).each do |i|
-        break if @sheet.cell(veg_name_row + 3, veg_date_col + i).blank?
+        next if @sheet.cell(veg_name_row + 3, veg_date_col + i).blank?
 
         # 日付の加算(シートの日付にする)
         date_array = match_sheet_day(veg_name_row, veg_date_col + i, date_array)
@@ -74,7 +74,7 @@ class Tasks::StoreVegetable
       end
     else
       (0..61).each do |i|
-        break if @sheet.cell(veg_name_row + 3, veg_date_col + i).blank?
+        next if @sheet.cell(veg_name_row + 3, veg_date_col + i).blank?
 
         # 日付の加算(シートの日付にする)
         unless i.zero?
