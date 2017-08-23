@@ -137,9 +137,10 @@ class Recent::ApisController < ApplicationController
   protected
 
   def authenticate
-    authenticate_or_request_with_http_token do |token|
-      token == ENV['RECIZO_API_TOKEN']
+    if Rails.env.production?
+      authenticate_or_request_with_http_token do |token|
+        token == ENV['RECIZO_API_TOKEN']
+      end
     end
   end
-
 end

@@ -43,8 +43,11 @@ class Tasks::Batch
         end
 
         #アップロード
-        ut = Tasks::UploadVegetable.new
-        ut.upload_data(file_name)
+        if Rails.env.production?
+          ut = Tasks::UploadVegetable.new
+          ut.upload_data(file_name)
+        end
+
       end
 
       # dbアップロード
@@ -56,22 +59,26 @@ class Tasks::Batch
         system("pg_dump -h localhost -U oliver -c recizo-server_development > #{Rails.root}/lib/tasks/db_dump/#{file_name}")
       end
 
-      ut = Tasks::UploadVegetable.new
-      ut.upload_db_data(file_name)
+      if Rails.env.production?
+        ut = Tasks::UploadVegetable.new
+        ut.upload_db_data(file_name)
+      end
 
 
       # 削除
       FileUtils.rm_rf('lib/tasks/db_dump')
       FileUtils.rm_rf('lib/tasks/excel')
 
-      if change > 0
+      if change > 0 && Rails.env.production?
         Slack.chat_postMessage text: "本日（#{Date.today}）の更新は正常に終了しました。(#{change}行更新)",
                                username: 'recizo-api',
                                channel: '#recizo-message'
-      else
+      elsif Rails.env.production?
         Slack.chat_postMessage text:"本日（#{Date.today}）の更新はありませんでした。",
                                username: 'recizo-api',
                                channel: '#recizo-message'
+      else
+        puts '正常に終了しました。'
       end
     rescue => e
       msg = ''
@@ -80,17 +87,20 @@ class Tasks::Batch
         p m
       end
       p e.message
-      Slack.chat_postMessage text: "エラー報告:（#{Date.today}）\n #{e.message}",
-                             username: 'recizo-bot',
-                             channel: '#recizo-message'
 
-      Slack.chat_postMessage text: "更新行数:（#{Date.today}）\n #{change}行",
-                             username: 'recizo-bot',
-                             channel: '#recizo-message'
+      if Rails.env.production?
+        Slack.chat_postMessage text: "エラー報告:（#{Date.today}）\n #{e.message}",
+                               username: 'recizo-bot',
+                               channel: '#recizo-message'
 
-      Slack.chat_postMessage text: "backtrace:（#{Date.today}）\n #{msg}",
-                             username: 'recizo-bot',
-                             channel: '#recizo-message'
+        Slack.chat_postMessage text: "更新行数:（#{Date.today}）\n #{change}行",
+                               username: 'recizo-bot',
+                               channel: '#recizo-message'
+
+        Slack.chat_postMessage text: "backtrace:（#{Date.today}）\n #{msg}",
+                               username: 'recizo-bot',
+                               channel: '#recizo-message'
+      end
     end
   end
 

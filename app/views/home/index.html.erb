@@ -1,9 +1,11 @@
 <header class="header">
   <div class="header__wrap">
-    <%= image_tag 'ic_recizo.svg', class: 'header__wrap__left' %>
+    <div class="header__wrap__left">
+      <%= image_tag 'ic_recizo.svg' %>
+    </div>
     <div class="header__wrap__right">
       <p class="header__wrap__right__text">冷蔵庫の中身を一括管理！</p>
-      <h1 class="header__wrap__right__h1">RECIZO</h1>
+      <h1 class="header__wrap__right__h1"><%= image_tag 'recizo.svg', alt:'RECIZO' %></h1>
       <p class="header__wrap__right__kana">レシゾー</p>
       <%= image_tag 'under_banner.svg', class: 'header__wrap__right__banner' %>
     </div>
@@ -50,9 +52,7 @@
     </div>
   </div>
 
-  <div class="slide-in-label">
-    <%= image_tag 'arrow.svg', class: 'main__arrow slide-in-item slide-reverse' %>
-  </div>
+  <div class="slide-in-label"><%= image_tag 'arrow.svg', class: 'main__arrow slide-in-item slide-reverse' %></div>
 
   <div class="main__func-description-area">
     <div class="main__func-description-area__wrap">
@@ -93,11 +93,14 @@
   </div>
 </section>
 <footer class="footer">
-  <div class="footer--credit">
-    <p>ベジ探</p>
-    <p>楽天</p>
+  <div class="footer__credit">
+    <p class="footer__credit__title">Supported by</p>
+    <div class="footer__credit__body">
+      <p>楽天ウェブサービス</p>
+      <p>野菜情報総合把握システム</p>
+    </div>
   </div>
-  <p class="footer--copyright">Copyright © 2017 ITEM All Rights Reserved.</p>
+  <p class="footer__copyright">Copyright © 2017 ITEM All Rights Reserved.</p>
 </footer>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
