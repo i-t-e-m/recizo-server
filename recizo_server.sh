@@ -52,13 +52,13 @@ if [ -d ~/recizo-server ]; then
     bundle exec rake db:create
     bundle exec ridgepole -c config/database.yml -E development --apply -f db/Schemafile
 
-    bundle exec rails db:seed
-
     cp ./.env.sample ./.env
 
     cp lib/tasks/secrets/environment.json.sample lib/tasks/secrets/environment.json
     cp lib/tasks/secrets/client_secrets.json.sample lib/tasks/secrets/client_secrets.json
     mkdir ~/run
+
+    bundle exec rails db:seed
 
     bundle exec rails s
 else
