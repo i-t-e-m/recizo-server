@@ -1,11 +1,11 @@
 class Tasks::DownloadVegetable
   def self.take_excel(vegs_name)
-    @path = "http://vegetan.alic.go.jp/kakakugurafu/#{vegs_name}.xlsx"
+    @path = "https://vegetan.alic.go.jp/kakakugurafu/#{vegs_name}.xlsx"
 
     begin
       open(@path)
     rescue
-      @path = "http://vegetan.alic.go.jp/kakakugurafu/#{vegs_name}.xls"
+      @path = "https://vegetan.alic.go.jp/kakakugurafu/#{vegs_name}.xls"
     end
 
     begin
